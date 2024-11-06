@@ -3,22 +3,39 @@
 class BaseObstacle {
   float x, y;
   float size;
-  
-  BaseObstacle(float x, float y, float size) {
+  float speed; 
+
+  BaseObstacle(float x, float y, float size, float speed) {
     this.x = x;
     this.y = y;
     this.size = size;
+    this.speed = speed;
   }
   
   void display() {
-
   }
+
+  void move() {
+    y+= speed;
+
+    if (y > height){
+      respawn();
+    }
+  }
+  
+  void respawn() {
+    y = -size;
+    x = random(width-size);
+    speed += 0.1;
+  }
+
+
 }
 
 class Obstacle extends BaseObstacle {
   
-  Obstacle(float x, float y, float size) {
-    super(x, y, size);
+  Obstacle(float x, float y, float size, float speed) {
+    super(x, y, size, speed);
   }
   
   void display() {
@@ -28,8 +45,8 @@ class Obstacle extends BaseObstacle {
 }
 
 class Obstacle2 extends BaseObstacle {  
-  Obstacle2(float x, float y, float size) {
-    super(x, y, size);
+  Obstacle2(float x, float y, float size, float speed) {
+    super(x, y, size, speed);
   }
  
   void display() {
