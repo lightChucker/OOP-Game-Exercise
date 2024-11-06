@@ -1,3 +1,5 @@
+//comment
+
 class Character {
   float x, y;
   float size;

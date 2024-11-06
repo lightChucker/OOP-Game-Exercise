@@ -35,7 +35,6 @@ void draw() {
 
   }
 
-  obstacle.y += 1;
 
   player.display();
   obstacle.display();

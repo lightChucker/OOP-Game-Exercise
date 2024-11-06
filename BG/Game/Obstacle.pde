@@ -1,3 +1,5 @@
+//comment
+
 class BaseObstacle {
   float x, y;
   float size;
